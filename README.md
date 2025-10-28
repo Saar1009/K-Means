@@ -49,3 +49,29 @@ To build the `symnmf` Python module (which creates a `.so` file), run:
 
 ```bash
 python3 setup.py build_ext --inplace
+
+This command will create the `symnmf` module in your directory, allowing `symnmf.py` and `analysis.py` to import it.
+
+## Usage
+
+The project provides three main entry points.
+
+### 1. Python Interface (Full SymNMF)
+
+This is the primary script for running the full algorithm or its individual C-implemented steps.
+
+**Syntax:**
+`python3 symnmf.py <k> <goal> <file_name>`
+
+**Arguments:**
+* `k`: The number of clusters (integer).
+* `goal`: The calculation to perform:
+    * `symnmf`: Perform the full SymNMF algorithm and output the final matrix $H$.
+    * `sym`: Calculate and output the similarity matrix $A$.
+    * `ddg`: Calculate and output the diagonal degree matrix $D$.
+    * `norm`: Calculate and output the normalized similarity matrix $W$.
+* `file_name`: Path to the input `.txt` file containing data points.
+
+**Example:**
+```bash
+python3 symnmf.py 2 symnmf input_1.txt
