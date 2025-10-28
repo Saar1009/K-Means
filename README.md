@@ -78,5 +78,62 @@ python3 symnmf.py 2 symnmf input_1.txt
 ```
 **Output:**
 ```bash
-0.0600,0.0100 0.0100,0.0500 0.0100,0.0400 0.0200,0.0400 0.0500,0.0200
+0.0600,0.0100
+0.0100,0.0500
+0.0100,0.0400
+0.0200,0.0400
+0.0500,0.0200
+```
+
+[cite: 79-85]
+
+### 2. C Executable (Partial Steps)
+
+This executable provides access to the C-implemented components directly.
+
+**Syntax:**
+`./symnmf <goal> <file_name>`
+
+**Arguments:**
+* `goal`: The calculation to perform:
+    * `sym`: Calculate and output the similarity matrix $A$.
+    * `ddg`: Calculate and output the diagonal degree matrix $D$.
+    * `norm`: Calculate and output the normalized similarity matrix $W$.
+* `file_name`: Path to the input `.txt` file.
+
+**Example:**
+```bash
+./symnmf sym input_1.txt
+```
+
+**Output:**
+```bash
+0.0000,0.0447,0.0456,0.0706,0.3615,0.0425
+0.0447,0.0000,0.2871,0.0004,0.1665,0.6122
+...
+```
+
+### 3. Clustering Analysis
+
+This script runs both SymNMF and K-Means on a dataset and prints their silhouette scores for comparison.
+
+**Syntax:**
+```bash
+python3 analysis.py <k> <file_name>
+```
+
+**Arguments:**
+* `k`: The number of clusters (integer)
+* `file_name`: Path to the input `.txt` file.
+
+**Example:**
+```bash
+python3 analysis.py 5 input_k5_d7.txt
+```
+
+**Output:**
+```bash
+nmf: 0.1162
+kmeans: 0.1147
+...
 ```
