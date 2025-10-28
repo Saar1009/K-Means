@@ -1,6 +1,6 @@
 # SymNMF: Symmetric Non-negative Matrix Factorization for Clustering
 
-This project is an implementation of the Symmetric Non-negative Matrix Factorization (SymNMF) clustering algorithm, developed as part of the "Software Project" course (0368-2161).
+This project is an implementation of the Symmetric Non-negative Matrix Factorization (SymNMF) clustering algorithm, developed as part of the "Software Project" course.
 
 The implementation uses a hybrid **Python** and **C** approach. The core computationally intensive calculations are written in C for performance, and these functions are wrapped and exposed to a Python interface using the Python C API. The project also includes an analysis script that compares the clustering quality of this SymNMF implementation against the K-Means algorithm using the Silhouette score.
 
@@ -75,3 +75,8 @@ This is the primary script for running the full algorithm or its individual C-im
 **Example:**
 ```bash
 python3 symnmf.py 2 symnmf input_1.txt
+```
+**Output:**
+```bash
+0.0600,0.0100 0.0100,0.0500 0.0100,0.0400 0.0200,0.0400 0.0500,0.0200
+```
