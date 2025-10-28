@@ -362,8 +362,8 @@ double compute_frobenius_diff(const  Matrix* A, const Matrix* B) /* computes the
     int i, j;
     double d, sum;
     /* sanity checks */
-    if (!A || !B) return INFINITY;
-    if (A->rows != B->rows || A->columns != B->columns) return INFINITY;
+    if (!A || !B) return HUGE_VAL;
+    if (A->rows != B->rows || A->columns != B->columns) return HUGE_VAL;
     /* compute_frobenius_diff */
     sum = 0;
     for (i = 0; i < A -> rows; i++)
