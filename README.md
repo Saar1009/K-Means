@@ -40,3 +40,12 @@ To compile the standalone `symnmf` C program, run:
 
 ```bash
 make
+
+This will create an executable file named `symnmf` in the root directory.
+
+### 2. Build the Python C Extension
+
+To build the `symnmf` Python module (which creates a `.so` file), run:
+
+```bash
+python3 setup.py build_ext --inplace
